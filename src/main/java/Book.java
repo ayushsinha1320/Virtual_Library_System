@@ -3,12 +3,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Book {
-    private String title;
-    private String author;
-    private int ISBN;
-    private String genre;
-    private LocalDate publicationDate;
-    private int numberOfCopies;
+    private final String title;
+    private final String author;
+    private final int ISBN;
+    private final String genre;
+    private final LocalDate publicationDate;
+    private final int numberOfCopies;
 
     private static final Set<Integer> isbnSet = new HashSet<>();
 
@@ -36,8 +36,4 @@ public class Book {
     public String getGenre() { return genre; }
     public LocalDate getPublicationDate() { return publicationDate; }
     public int getNumberOfCopies() { return numberOfCopies; }
-
-    public static void clearIsbnSet() {
-        isbnSet.clear();
-    }
 }
