@@ -6,15 +6,13 @@ import java.util.stream.Collectors;
 public class Library {
     private final List<Book> books = new ArrayList<>();
 
-
-    // Batch upload from CSV
     public void batchUploadFromCSV(String filePath) throws Exception {
         BufferedReader br = new BufferedReader(new FileReader(filePath));
         String line;
         int addedBooks = 0, skippedBooks = 0;
 
         while ((line = br.readLine()) != null) {
-            String[] details = line.split(",");  // Assuming CSV format: title,author,isbn,genre,publicationDate,copies
+            String[] details = line.split(",");
             try {
                 Book book = new Book(details[0], details[1], Integer.parseInt(details[2]), details[3],
                         LocalDate.parse(details[4]), Integer.parseInt(details[5]));

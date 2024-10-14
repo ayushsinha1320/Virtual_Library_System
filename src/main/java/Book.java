@@ -10,7 +10,6 @@ public class Book {
     private LocalDate publicationDate;
     private int numberOfCopies;
 
-    // A Set to hold all unique ISBNs
     private static final Set<Integer> isbnSet = new HashSet<>();
 
     public Book(String title, String author, int ISBN, String genre, LocalDate publicationDate, int numberOfCopies) {
@@ -31,7 +30,6 @@ public class Book {
         return !isbnSet.contains(ISBN);
     }
 
-    // Getters
     public String getTitle() { return title; }
     public String getAuthor() { return author; }
     public int getISBN() { return ISBN; }
@@ -40,6 +38,6 @@ public class Book {
     public int getNumberOfCopies() { return numberOfCopies; }
 
     public static void clearIsbnSet() {
-        isbnSet.clear();  // Resetting for testing purposes
+        isbnSet.clear();
     }
 }
